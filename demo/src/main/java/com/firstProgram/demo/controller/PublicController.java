@@ -63,7 +63,7 @@ public class PublicController {
             String jwt=jwtUtils.generateToken(userDetails.getUsername());
             return new ResponseEntity<>(jwt,HttpStatus.OK);
         }catch (Exception e){
-            return null;
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
